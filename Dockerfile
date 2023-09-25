@@ -36,11 +36,7 @@ RUN cd /usr/src/libs/signalwire-c && PKG_CONFIG_PATH=/usr/lib/pkgconfig cmake . 
 RUN sed -i 's|#formats/mod_shout|formats/mod_shout|' /usr/src/freeswitch/build/modules.conf.in
 RUN sed -i 's|#xml_int/mod_xml_curl|xml_int/mod_xml_curl|' /usr/src/freeswitch/build/modules.conf.in
 
-# 禁用mod mod_enum  mod_fsv mod_opus mod_sndfile mod_vpx databases/mod_pgsql
-RUN sed -i 's|applications/mod_enum|#applications/mod_enum|' /usr/src/freeswitch/build/modules.conf.in
-RUN sed -i 's|applications/mod_fsv|#applications/mod_fsv|' /usr/src/freeswitch/build/modules.conf.in
-RUN sed -i 's|codecs/mod_opus|#codecs/mod_opus|' /usr/src/freeswitch/build/modules.conf.in
-RUN sed -i 's|formats/mod_sndfile|#formats/mod_sndfile|' /usr/src/freeswitch/build/modules.conf.in
+# 禁用
 RUN sed -i 's|applications/mod_sms|#applications/mod_sms|' /usr/src/freeswitch/build/modules.conf.in
 RUN sed -i 's|formats/mod_vpx|#formats/mod_vpx|' /usr/src/freeswitch/build/modules.conf.in
 
